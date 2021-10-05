@@ -1,4 +1,4 @@
-<?php include 'admin_header.php'; 
+<?php include 'admin_view_header.php'; 
 
 
 if(isset($_GET['aid'])){
@@ -20,11 +20,12 @@ if(isset($_GET['rid'])){
 }
 
 ?>
+<div class="container" style="padding: 2em;">
 
 <form action="" method="post">
 
-<table>
-    <h1>Editor Details</h1>
+<table  class="table" style="width: 1000px;">
+    <h1>Editor Details</h1><br>
     <tr>
         <th>Sl No</th>
         <th>First Name</th>
@@ -48,11 +49,11 @@ if(isset($_GET['rid'])){
                     <td><?php echo $row['email']; ?></td>
                     <?php 
                         if($row['usertype']=="Pending"){ ?>
-                         <td><a href="?aid=<?php echo $row['login_id'] ?>">Accept</a>
-                        <a href="?rid=<?php echo $row['login_id'] ?>">Reject</a></td>
+                         <td><a class="btn btn-success btn-sm" href="?aid=<?php echo $row['login_id'] ?>">Accept</a>
+                        <a class="btn btn-danger btn-sm" href="?rid=<?php echo $row['login_id'] ?>">Reject</a></td>
                     <?php    }
                     else if($row['usertype']=="editor"){ ?>
-                        <td><a href="admin_view_editor_services.php?editor_id=<?php echo $row['editor_id'] ?>">Services</a></td>
+                        <td><a class="btn btn-primary btn-sm" href="admin_view_editor_services.php?editor_id=<?php echo $row['editor_id'] ?>">Services</a></td>
                 <?php    }
 
                     ?>
@@ -67,5 +68,5 @@ if(isset($_GET['rid'])){
     ?>
 </table>
 </form>
-
+</div>
 <?php include 'footer.php'; ?>

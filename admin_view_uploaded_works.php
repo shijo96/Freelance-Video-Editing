@@ -1,11 +1,15 @@
-<?php include 'admin_header.php'; 
+<?php include 'admin_view_header.php'; 
 extract($_GET);
 ?>
 
+
+<div class="container" style="padding: 2em;">
+
+
 <form action="" method="post">
 
-<table>
-    <h1>Work Details</h1>
+<table class="table" style="width: 800px;">
+    <h1>Work Details</h1><br>
     
 
     <?php 
@@ -15,7 +19,7 @@ extract($_GET);
         foreach($res as $row){ ?>
                 <tr>
                     <td>
-                        <video width="320" height="240" controls autoplay>
+                        <video width="700" height="240" controls autoplay>
                             <source src="<?php echo $row['uploadedfile']; ?>" type="video/mp4">
                             <source src="<?php echo $row['uploadedfile']; ?>" type="video/ogg">
                             Your browser does not support the video tag.
@@ -34,5 +38,5 @@ extract($_GET);
     ?>
 </table>
 </form>
-
+</div>
 <?php include 'footer.php'; ?>

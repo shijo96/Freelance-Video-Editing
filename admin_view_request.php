@@ -1,11 +1,14 @@
-<?php include 'admin_header.php'; 
+<?php include 'admin_view_header.php'; 
 
 ?>
 
+<div class="container" style="padding: 2em;">
+
+
 <form action="" method="post">
 
-<table>
-    <h1>Request Details</h1>
+<table  class="table" style="width: 1100px;">
+    <h1>Request Details</h1><br>
     <tr>
         <th>Sl No</th>
         <th>Client Name</th>
@@ -21,7 +24,7 @@
     </tr>
 
     <?php 
-        $q1="SELECT * FROM `request` INNER JOIN `client` ON  `client_id`=`customer_id` INNER JOIN `service` USING(`service_id`) INNER JOIN `category` USING(`category_id`) ";
+         $q1="SELECT * FROM `request` INNER JOIN `client` ON `client_id`=`customer_id` INNER JOIN `myservice` USING(`myservice_id`) INNER JOIN `service` USING(`service_id`) INNER JOIN `category` USING(`category_id`)";
         $res=select($q1);
         $i=1;
         foreach($res as $row){ ?>
@@ -39,7 +42,7 @@
                     <td><?php echo $row['status']; ?></td>
                     <?php 
                         if($row['status']=="Finished"){ ?>
-                                 <td><a href="admin_view_uploaded_works.php?request_id=<?php echo $row['request_id']; ?>">Works</a></td>
+                                 <td><a class="btn btn-primary btn-sm" href="admin_view_uploaded_works.php?request_id=<?php echo $row['request_id']; ?>">Works</a></td>
                     <?php    }
 
                     ?>
@@ -54,5 +57,5 @@
     ?>
 </table>
 </form>
-
+</div>
 <?php include 'footer.php'; ?>

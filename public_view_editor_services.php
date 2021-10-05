@@ -1,12 +1,14 @@
-<?php include 'public_header.php'; 
+<?php include 'public_view_header.php'; 
 extract($_GET);
 
 ?>
 
+<div class="container" style="padding: 2em;">
+
 <form action="" method="post">
 
-<table>
-    <h1>Service Details</h1>
+<table class="table" style="width: 600px;">
+    <h1>Service Details</h1> <br>
     <tr>
         <th>Sl No</th>
         <th>Category Name</th>
@@ -34,5 +36,7 @@ extract($_GET);
     ?>
 </table>
 </form>
+
+</div>
 
 <?php include 'footer.php'; ?>

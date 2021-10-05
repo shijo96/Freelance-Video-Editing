@@ -18,20 +18,26 @@ if(isset($_GET['did'])){
 
 ?>
 
-<form action="" method="post">
-<h1>Manage Category</h1>
-<table>
+<form action="" method="post" style="padding-left: 5em;padding-top: 8em;">
+<h1 style="color: #fff;">Manage Category</h1>
+<table class="table" style="width: 500px; color: #fff;">
     <tr>
         <th>Category Name</th>
         <td><input type="text" class="form-control" name="category" id=""></td>
     </tr>
     <tr>
-        <td colspan="2" align="center"><input type="submit" value="ADD" name="cat"></td>
+        <td colspan="2" align="center"><input type="submit" class="btn btn-success" value="ADD" name="cat"></td>
     </tr>
 </table>
+</form>
+</section>
 
-<table>
-    <h1>Category Details</h1>
+
+<div class="container" style="padding: 2em;">
+
+<table  class="table" style="width: 500px;">
+    <h1>Category Details</h1><br>
+    
     <tr>
         <th>Sl No</th>
         <th>Category Name</th>
@@ -45,7 +51,7 @@ if(isset($_GET['did'])){
                 <tr>
                     <td><?php echo $i; ?></td>
                     <td><?php echo $row['category_name']; ?></td>
-                    <td><a href="?did=<?php echo $row['category_id'] ?>">Remove</a></td>
+                    <td><a class="btn btn-danger btn-sm" href="?did=<?php echo $row['category_id'] ?>">Remove</a></td>
                 </tr>
                
     <?php 
@@ -55,7 +61,8 @@ if(isset($_GET['did'])){
 
     ?>
 </table>
-</form>
 
+
+</div>
 
 <?php include 'footer.php'; ?>

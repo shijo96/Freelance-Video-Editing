@@ -33,17 +33,18 @@ if(isset($_POST['uservice'])){
 
 ?>
 
-<form action="" method="post">
+
 
 <?php 
     if(isset($_GET['uid'])){ ?>
+<form action="" method="post" style="padding-left: 5em;padding-top: 8em;">
 
-<h1>Update Service</h1>
-<table>
+<h1 style="color: #fff;">Update Service</h1>
+<table class="table" style="width: 500px; color: #fff;">
     <tr>
         <th>Category Name</th>
         <td>
-            <select name="cat" id="">
+            <select name="cat" id="" class="form-control">
                 <option value="<?php echo  $rss[0]['category_id']; ?>"><?php echo  $rss[0]['category_name']; ?></option>
                 <?php 
                     $q1="SELECT * FROM `category`";
@@ -60,22 +61,22 @@ if(isset($_POST['uservice'])){
         <td><input type="text" class="form-control" name="service_n" id="" value="<?php echo  $rss[0]['service']; ?>"></td>
     </tr>
     <tr>
-        <td colspan="2" align="center"><input type="submit" value="UPDATE" name="uservice"></td>
+        <td colspan="2" align="center"><input type="submit" class="btn btn-warning" value="UPDATE" name="uservice"></td>
     </tr>
 </table>
-
+</form>
 <?php
 
     }
     else{  ?>
 
-
-<h1>Manage Service</h1>
-<table>
+<form style="padding-left: 5em;padding-top: 8em;">
+<h1 style="color: #fff;">Manage Service</h1>
+<table  class="table" style="width: 500px; color: #fff;">
     <tr>
         <th>Category Name</th>
         <td>
-            <select name="cat" id="">
+            <select name="cat" id="" class="form-control">
                 <option value="">-- Choose --</option>
                 <?php 
                     $q1="SELECT * FROM `category`";
@@ -92,16 +93,23 @@ if(isset($_POST['uservice'])){
         <td><input type="text" class="form-control" name="service_n" id=""></td>
     </tr>
     <tr>
-        <td colspan="2" align="center"><input type="submit" value="ADD" name="service"></td>
+        <td colspan="2" align="center"><input type="submit" class="btn btn-success" value="ADD" name="service"></td>
     </tr>
 </table>
-
+</form>
 <?php
     }
     ?>
 
-<table>
-    <h1>Service Details</h1>
+
+</section>
+
+
+<div class="container" style="padding: 2em;">
+
+
+<table class="table" style="width: 500px;">
+    <h1>Service Details</h1> <br>
     <tr>
         <th>Sl No</th>
         <th>Category Name</th>
@@ -117,8 +125,8 @@ if(isset($_POST['uservice'])){
                     <td><?php echo $i; ?></td>
                     <td><?php echo $row['category_name']; ?></td>
                     <td><?php echo $row['service']; ?></td>
-                    <td><a href="?did=<?php echo $row['service_id'] ?>">Remove</a>
-                        <a href="?uid=<?php echo $row['service_id'] ?>">Edit</a></td>
+                    <td><a class="btn btn-danger btn-sm" href="?did=<?php echo $row['service_id'] ?>">Remove</a>
+                        <a class="btn btn-warning btn-sm" href="?uid=<?php echo $row['service_id'] ?>">Edit</a></td>
                 </tr>
                
     <?php 
@@ -128,7 +136,8 @@ if(isset($_POST['uservice'])){
 
     ?>
 </table>
-</form>
+</div>
+
 
 
 <?php include 'footer.php'; ?>

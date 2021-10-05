@@ -1,11 +1,14 @@
-<?php include 'admin_header.php';
+<?php include 'admin_view_header.php';
 
 ?>
 
+<div class="container" style="padding: 2em;">
 
+<form method="post">
 
-			<table align="center"  class="table" style="width: 900px">
-				<form method="post">
+			<table class="table" style="width: 900px">
+			<h1 >Complaints</h1><br>
+				
 			
 			<thead>
 				<tr>
@@ -56,10 +59,11 @@
 				
 
 			</tbody>
-			</form>
+			
 		</table>
+		</form>
 	
-
+</div>
 <?php   
 include "footer.php";
  ?>

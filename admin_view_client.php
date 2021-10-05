@@ -1,11 +1,14 @@
-<?php include 'admin_header.php'; 
+<?php include 'admin_view_header.php'; 
 
 ?>
 
+<div class="container" style="padding: 2em;">
+
+
 <form action="" method="post">
 
-<table>
-    <h1>Client Details</h1>
+<table  class="table" style="width: 1000px;">
+    <h1>Client Details</h1><br>
     <tr>
         <th>Sl No</th>
         <th>First Name</th>
@@ -38,5 +41,5 @@
     ?>
 </table>
 </form>
-
+</div>
 <?php include 'footer.php'; ?>
