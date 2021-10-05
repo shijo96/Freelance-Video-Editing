@@ -17,3 +17,4 @@
 <a href="admin_view_client.php">Client</a>
 <a href="admin_view_request.php">Request</a>
 <a href="admin_view_complaints.php">Complaints</a>
+<a href="index.php">Logout</a>

@@ -52,7 +52,7 @@ if(isset($_GET['rid'])){
                         <a href="?rid=<?php echo $row['login_id'] ?>">Reject</a></td>
                     <?php    }
                     else if($row['usertype']=="editor"){ ?>
-                        <td><a href="admin_view_editor_services.php?editor_id=<?php echo $row['editor_id'] ?>">Services</a>
+                        <td><a href="admin_view_editor_services.php?editor_id=<?php echo $row['editor_id'] ?>">Services</a></td>
                 <?php    }
 
                     ?>
