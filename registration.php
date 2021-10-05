@@ -10,7 +10,7 @@ if(isset($_POST['editor_reg'])){
         alert("Username Already Exist Please Choose Another One...!!");
     }
     else{
-        $q1="INSERT INTO `login` VALUES(NULL,'$uname','$passw','pending')";
+        $q1="INSERT INTO `login` VALUES(NULL,'$uname','$passw','Pending')";
         $ids=insert($q1);
         $q2="INSERT INTO `editor` VALUES(NULL,'$ids','$fname','$lname','$place','$phone','$email')";
         insert($q2);

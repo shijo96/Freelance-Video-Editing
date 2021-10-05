@@ -13,3 +13,7 @@
 <a href="admin_home.php">Home</a>
 <a href="admin_manage_category.php">Category</a>
 <a href="admin_manage_service.php">Service</a>
+<a href="admin_view_editors.php">Editors</a>
+<a href="admin_view_client.php">Client</a>
+<a href="admin_view_request.php">Request</a>
+<a href="admin_view_complaints.php">Complaints</a>

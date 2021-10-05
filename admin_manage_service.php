@@ -1,6 +1,6 @@
 <?php include 'admin_header.php'; 
 
-if(isset($_POST['cat'])){
+if(isset($_POST['service'])){
     extract($_POST);
 
     $q="INSERT INTO `service` VALUES(NULL,'$cat','$service_n')";
@@ -16,9 +16,60 @@ if(isset($_GET['did'])){
     return redirect("admin_manage_service.php");
 }
 
+if(isset($_GET['uid'])){
+    extract($_GET);
+    $qd="SELECT * FROM `service` INNER JOIN `category` USING(`category_id`) WHERE `service_id`='$uid'";
+    $rss=select($qd);
+    
+}
+
+if(isset($_POST['uservice'])){
+    extract($_POST);
+    $q="UPDATE `service` SET `category_id`='$cat',`service`='$service_n' WHERE `service_id`='$uid'";
+    update($q);
+    alert("Successfully Updated..");
+    return redirect("admin_manage_service.php");
+}
+
 ?>
 
 <form action="" method="post">
+
+<?php 
+    if(isset($_GET['uid'])){ ?>
+
+<h1>Update Service</h1>
+<table>
+    <tr>
+        <th>Category Name</th>
+        <td>
+            <select name="cat" id="">
+                <option value="<?php echo  $rss[0]['category_id']; ?>"><?php echo  $rss[0]['category_name']; ?></option>
+                <?php 
+                    $q1="SELECT * FROM `category`";
+                    $res=select($q1);
+                    foreach($res as $row){  ?>
+                        <option value="<?php echo $row['category_id'] ?>"><?php echo $row['category_name'] ?></option>
+                <?php    }
+                ?>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Service Name</th>
+        <td><input type="text" class="form-control" name="service_n" id="" value="<?php echo  $rss[0]['service']; ?>"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center"><input type="submit" value="UPDATE" name="uservice"></td>
+    </tr>
+</table>
+
+<?php
+
+    }
+    else{  ?>
+
+
 <h1>Manage Service</h1>
 <table>
     <tr>
@@ -45,6 +96,10 @@ if(isset($_GET['did'])){
     </tr>
 </table>
 
+<?php
+    }
+    ?>
+
 <table>
     <h1>Service Details</h1>
     <tr>
@@ -62,7 +117,8 @@ if(isset($_GET['did'])){
                     <td><?php echo $i; ?></td>
                     <td><?php echo $row['category_name']; ?></td>
                     <td><?php echo $row['service']; ?></td>
-                    <td><a href="?did=<?php echo $row['service_id'] ?>">Remove</a></td>
+                    <td><a href="?did=<?php echo $row['service_id'] ?>">Remove</a>
+                        <a href="?uid=<?php echo $row['service_id'] ?>">Edit</a></td>
                 </tr>
                
     <?php 
