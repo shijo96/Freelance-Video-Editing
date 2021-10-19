@@ -83,31 +83,31 @@ $(document).ready(function(){
         <table class="table" style="width: 500px; color: #fff;">
             <tr>
                 <th>First Name</th>
-                <td><input type="text" class="form-control" name="fname" id=""></td>
+                <td><input type="text" class="form-control" required name="fname" id=""></td>
             </tr>
             <tr>
                 <th>Last Name</th>
-                <td><input type="text" class="form-control" name="lname" id=""></td>
+                <td><input type="text" class="form-control" required name="lname" id=""></td>
             </tr>
             <tr>
                 <th>Place</th>
-                <td><input type="text" class="form-control" name="place" id=""></td>
+                <td><input type="text" class="form-control" required name="place" id=""></td>
             </tr>
             <tr>
                 <th>Phone</th>
-                <td><input type="text" class="form-control" name="phone" id=""></td>
+                <td><input type="text" class="form-control" required pattern="[0-9]{10}" name="phone" id=""></td>
             </tr>
             <tr>
                 <th>Email</th>
-                <td><input type="email" class="form-control" name="email" id=""></td>
+                <td><input type="email" class="form-control" required name="email" id=""></td>
             </tr>
             <tr>
                 <th>Username</th>
-                <td><input type="text" class="form-control" name="uname" id=""></td>
+                <td><input type="text" class="form-control" required name="uname" id=""></td>
             </tr>
             <tr>
                 <th>Password</th>
-                <td><input type="password" class="form-control" name="passw" id=""></td>
+                <td><input type="password" class="form-control" required name="passw" id=""></td>
             </tr>
             <tr>
                 <td colspan="2" align="center"><input type="submit" name="editor_reg" class="btn btn-success" value="Register" id=""></td>
@@ -123,31 +123,31 @@ $(document).ready(function(){
         <table class="table" style="width: 500px; color: #fff;">
             <tr>
                 <th>First Name</th>
-                <td><input type="text" class="form-control" name="fname" id=""></td>
+                <td><input type="text" class="form-control" required name="fname" id=""></td>
             </tr>
             <tr>
                 <th>Last Name</th>
-                <td><input type="text" class="form-control" name="lname" id=""></td>
+                <td><input type="text" class="form-control" required name="lname" id=""></td>
             </tr>
             <tr>
                 <th>Place</th>
-                <td><input type="text" class="form-control" name="place" id=""></td>
+                <td><input type="text" class="form-control" required name="place" id=""></td>
             </tr>
             <tr>
                 <th>Phone</th>
-                <td><input type="text" class="form-control" name="phone" id=""></td>
+                <td><input type="text" class="form-control" required pattern="[0-9]{10}" name="phone" id=""></td>
             </tr>
             <tr>
                 <th>Email</th>
-                <td><input type="email" class="form-control" name="email" id=""></td>
+                <td><input type="email" class="form-control" required name="email" id=""></td>
             </tr>
             <tr>
                 <th>Username</th>
-                <td><input type="text" class="form-control" name="uname" id=""></td>
+                <td><input type="text" class="form-control" required name="uname" id=""></td>
             </tr>
             <tr>
                 <th>Password</th>
-                <td><input type="password" class="form-control" name="passw" id=""></td>
+                <td><input type="password" class="form-control" required name="passw" id=""></td>
             </tr>
             <tr>
                 <td colspan="2" align="center"><input type="submit" class="btn btn-success" name="user_reg" value="Register" id=""></td>

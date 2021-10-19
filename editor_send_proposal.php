@@ -47,11 +47,11 @@ else{ ?>
 <table class="table" style="width: 500px; color: #fff;">
     <tr>
         <th>Amount</th>
-        <td><input type="text" class="form-control" name="amount" id="" ></td>
+        <td><input type="text" class="form-control" required name="amount" id="" ></td>
     </tr>
     <tr>
         <th>Date</th>
-        <td><input type="date" class="form-control" name="date" id="" ></td>
+        <td><input type="date" class="form-control" required name="date" id="" ></td>
     </tr>
     <tr>
         <td colspan="2" align="center"><input type="submit" class="btn btn-success" value="SEND" name="prop"></td>

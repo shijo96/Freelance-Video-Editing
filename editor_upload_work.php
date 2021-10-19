@@ -96,7 +96,7 @@ if(isset($_GET['uploadwork_id'])){ ?>
     <table class="table" style="width: 500px; color: #fff;">
         <tr>
             <th>Video</th>
-            <td><input type="file" class="form-control" name="vdo" id=""></td>
+            <td><input type="file" class="form-control" required name="vdo" id=""></td>
         </tr>
        
         <tr>
@@ -140,7 +140,7 @@ else{ ?>
 <table class="table" style="width: 500px; color: #fff;">
     <tr>
         <th>Video</th>
-        <td><input type="file" class="form-control" name="vdo" id=""></td>
+        <td><input type="file" class="form-control" required name="vdo" id=""></td>
     </tr>
    
     <tr>

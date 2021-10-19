@@ -1,12 +1,6 @@
 <?php include 'client_header.php'; 
 extract($_GET);
 
-if(isset($_POST[''])){
-    extract($_POST);
-
-    
-    alert("Successfully Added..");
-}
 
 if (isset($_POST['work'])) 
 {
@@ -54,19 +48,19 @@ if (isset($_POST['work']))
 <table class="table" style="width: 500px; color: #fff;">
     <tr>
         <th>Title</th>
-        <td><input type="text" class="form-control" name="title" id=""></td>
+        <td><input type="text" class="form-control" required name="title" id=""></td>
     </tr>
     <tr>
         <th>Video</th>
-        <td><input type="file" class="form-control" name="video" id=""></td>
+        <td><input type="file" class="form-control" required name="video" id=""></td>
     </tr>
     <tr>
         <th>Details</th>
-        <td><textarea name="details" class="form-control" id="" ></textarea></td>
+        <td><textarea name="details" class="form-control" required id="" ></textarea></td>
     </tr>
     <tr>
         <th>Date</th>
-        <td><input type="date" class="form-control" name="date" id=""></td>
+        <td><input type="date" class="form-control" required name="date" id=""></td>
     </tr>
     <tr>
         <td colspan="2" align="center"><input type="submit" class="btn btn-success" value="ADD" name="work"></td>

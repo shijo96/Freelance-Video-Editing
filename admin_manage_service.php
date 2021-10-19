@@ -58,7 +58,7 @@ if(isset($_POST['uservice'])){
     </tr>
     <tr>
         <th>Service Name</th>
-        <td><input type="text" class="form-control" name="service_n" id="" value="<?php echo  $rss[0]['service']; ?>"></td>
+        <td><input type="text" class="form-control" required name="service_n" id="" value="<?php echo  $rss[0]['service']; ?>"></td>
     </tr>
     <tr>
         <td colspan="2" align="center"><input type="submit" class="btn btn-warning" value="UPDATE" name="uservice"></td>
@@ -90,7 +90,7 @@ if(isset($_POST['uservice'])){
     </tr>
     <tr>
         <th>Service Name</th>
-        <td><input type="text" class="form-control" name="service_n" id=""></td>
+        <td><input type="text" class="form-control" required name="service_n" id=""></td>
     </tr>
     <tr>
         <td colspan="2" align="center"><input type="submit" class="btn btn-success" value="ADD" name="service"></td>

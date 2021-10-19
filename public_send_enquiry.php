@@ -18,7 +18,7 @@ if(isset($_POST['enq'])){
 <table class="table" style="width: 500px; color: #fff;">
     <tr>
         <th>Question</th>
-        <td><textarea name="question" id="" class="form-control" cols="30" rows="5"></textarea></td>
+        <td><textarea name="question" id="" required class="form-control" cols="30" rows="5"></textarea></td>
        
     </tr>
     <tr>

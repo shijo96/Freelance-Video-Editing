@@ -18,7 +18,7 @@ if(isset($_POST['complaint'])){
 <table class="table" style="width: 500px; color: #fff;">
     <tr>
         <th>Complaint</th>
-        <td><textarea name="comp" id="" class="form-control" ></textarea></td>
+        <td><textarea name="comp" id="" required class="form-control" ></textarea></td>
     </tr>
     <tr>
         <td colspan="2" align="center"><input type="submit" class="btn btn-success" value="SEND" name="complaint"></td>

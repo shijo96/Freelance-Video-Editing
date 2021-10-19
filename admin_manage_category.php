@@ -23,7 +23,7 @@ if(isset($_GET['did'])){
 <table class="table" style="width: 500px; color: #fff;">
     <tr>
         <th>Category Name</th>
-        <td><input type="text" class="form-control" name="category" id=""></td>
+        <td><input type="text" required class="form-control" name="category" id=""></td>
     </tr>
     <tr>
         <td colspan="2" align="center"><input type="submit" class="btn btn-success" value="ADD" name="cat"></td>
