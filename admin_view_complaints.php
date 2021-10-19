@@ -31,7 +31,7 @@
 					<td style="color: black;"><?php echo $row['fname']; ?> <?php echo $row['lname']; ?></td>
 					<td style="color: black;"><?php echo $row['complaint']; ?></td>
 					<td style="color: black;"><?php echo $row['date']; ?></td>
-					<?php if($row['reply']=="pending"){ ?>
+					<?php if($row['reply']=="Pending"){ ?>
 						<td style="color: black;"><input type="text" class="form-control"  name="reply<?php echo $i; ?>" style="border-color: #000;">
 						<input type="submit" class="btn btn-primary" name="replys<?php echo $i; ?>" value="Send">
 						<input type="hidden" name="complaint_id<?php echo $i; ?>" value="<?php echo $row['complaint_id'];?>"></td>

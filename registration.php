@@ -29,7 +29,7 @@ if(isset($_POST['user_reg'])){
         alert("Username Already Exist Please Choose Another One...!!");
     }
     else{
-        $q1="INSERT INTO `login` VALUES(NULL,'$uname','$passw','user')";
+        $q1="INSERT INTO `login` VALUES(NULL,'$uname','$passw','client')";
         $ids=insert($q1);
         $q2="INSERT INTO `client` VALUES(NULL,'$ids','$fname','$lname','$place','$phone','$email')";
         insert($q2);
