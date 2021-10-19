@@ -24,7 +24,7 @@ CREATE TABLE `category` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `category_name` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `category` */
 
@@ -32,7 +32,8 @@ insert  into `category`(`category_id`,`category_name`) values
 (1,'sdfgh'),
 (3,'sdfgh'),
 (4,'sdfvb'),
-(5,'sdfvb');
+(5,'sdfvb'),
+(8,'testing');
 
 /*Table structure for table `chat` */
 
@@ -45,9 +46,24 @@ CREATE TABLE `chat` (
   `message` varchar(1000) DEFAULT NULL,
   `date` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`chat_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `chat` */
+
+insert  into `chat`(`chat_id`,`sender_id`,`receiver_id`,`message`,`date`) values 
+(1,0,2,'sdfghf',NULL),
+(2,1,2,'agrjn',NULL),
+(3,1,2,'agrjn',NULL),
+(4,1,2,'agrjn',NULL),
+(5,1,2,'agrjn',NULL),
+(6,1,2,'agrjn',NULL),
+(7,1,2,'agrjn',NULL),
+(8,1,2,'agrjn',NULL),
+(9,1,2,'agrjn',NULL),
+(10,1,2,'agrjn',NULL),
+(11,0,1,'erhtdfd',NULL),
+(12,2,1,'helloo\r\n',NULL),
+(13,1,2,'hii',NULL);
 
 /*Table structure for table `client` */
 
@@ -80,9 +96,13 @@ CREATE TABLE `complaint` (
   `reply` varchar(500) DEFAULT NULL,
   `date` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`complaint_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `complaint` */
+
+insert  into `complaint`(`complaint_id`,`client_id`,`complaint`,`reply`,`date`) values 
+(1,1,'hello','hiiiii','2021-09-10'),
+(2,1,'fghhfbf','hellooo','2021-10-18');
 
 /*Table structure for table `editor` */
 
@@ -97,7 +117,7 @@ CREATE TABLE `editor` (
   `phone` varchar(15) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`editor_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `editor` */
 
@@ -110,13 +130,20 @@ DROP TABLE IF EXISTS `enquiry`;
 
 CREATE TABLE `enquiry` (
   `enquiry_id` int(11) NOT NULL AUTO_INCREMENT,
+  `editor_id` int(11) DEFAULT NULL,
   `enquiry` varchar(1000) DEFAULT NULL,
   `reply` varchar(1000) DEFAULT NULL,
   `date` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`enquiry_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `enquiry` */
+
+insert  into `enquiry`(`enquiry_id`,`editor_id`,`enquiry`,`reply`,`date`) values 
+(1,1,'ghn','Pending','2021-10-05'),
+(2,1,'ghn','Pending','2021-10-05'),
+(3,1,'ghn','Pending','2021-10-05'),
+(4,1,'fghjm,','wertfghjk','2021-10-05');
 
 /*Table structure for table `login` */
 
@@ -128,13 +155,13 @@ CREATE TABLE `login` (
   `password` varchar(20) DEFAULT NULL,
   `usertype` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`login_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `login` */
 
 insert  into `login`(`login_id`,`username`,`password`,`usertype`) values 
-(1,'Lee Bridges','Pa$$w0rd!','user'),
-(2,'Stephen Reilly','Pa$$w0rd!','editor'),
+(1,'cc','cc','client'),
+(2,'ee','ee','editor'),
 (3,'admin','admin','admin');
 
 /*Table structure for table `myservice` */
@@ -146,9 +173,12 @@ CREATE TABLE `myservice` (
   `service_id` int(11) DEFAULT NULL,
   `editor_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`myservice_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `myservice` */
+
+insert  into `myservice`(`myservice_id`,`service_id`,`editor_id`) values 
+(1,1,1);
 
 /*Table structure for table `payment` */
 
@@ -160,9 +190,12 @@ CREATE TABLE `payment` (
   `amount` varchar(20) DEFAULT NULL,
   `date` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`payment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `payment` */
+
+insert  into `payment`(`payment_id`,`request_id`,`amount`,`date`) values 
+(1,1,'10000 ','2021-10-18');
 
 /*Table structure for table `proposal` */
 
@@ -175,9 +208,12 @@ CREATE TABLE `proposal` (
   `date` varchar(20) DEFAULT NULL,
   `status` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`proposal_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `proposal` */
+
+insert  into `proposal`(`proposal_id`,`request_id`,`amount`,`date`,`status`) values 
+(1,1,'10000','2021-10-26','Accepted');
 
 /*Table structure for table `request` */
 
@@ -186,15 +222,19 @@ DROP TABLE IF EXISTS `request`;
 CREATE TABLE `request` (
   `request_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) DEFAULT NULL,
-  `service_id` int(11) DEFAULT NULL,
+  `myservice_id` int(11) DEFAULT NULL,
+  `title` varchar(100) DEFAULT NULL,
   `video` varchar(500) DEFAULT NULL,
   `details` varchar(500) DEFAULT NULL,
   `date` varchar(100) DEFAULT NULL,
   `status` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`request_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `request` */
+
+insert  into `request`(`request_id`,`customer_id`,`myservice_id`,`title`,`video`,`details`,`date`,`status`) values 
+(1,1,1,'sample test','videos/video_616cfd1aa23fb.mp4','sdffhyjklkjhg','2021-10-25','Paid');
 
 /*Table structure for table `service` */
 
@@ -205,12 +245,14 @@ CREATE TABLE `service` (
   `category_id` int(11) DEFAULT NULL,
   `service` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`service_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `service` */
 
 insert  into `service`(`service_id`,`category_id`,`service`) values 
-(1,4,'addfgbn');
+(1,4,'addfgbn'),
+(2,1,'adsfgh'),
+(3,8,'sample');
 
 /*Table structure for table `uploadworks` */
 
@@ -222,9 +264,12 @@ CREATE TABLE `uploadworks` (
   `uploadedfile` varchar(500) DEFAULT NULL,
   `date` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`uploadwork_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `uploadworks` */
+
+insert  into `uploadworks`(`uploadwork_id`,`request_id`,`uploadedfile`,`date`) values 
+(1,1,'videos/video_616d3b05c723e.mp4','2021-10-18');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
